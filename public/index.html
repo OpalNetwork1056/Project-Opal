@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Art Class</title>
+  <link rel="shortcut icon" href="./assets/images/icon.png" type="image/png" />
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <style>
+    /* Global Styles */
+    body {
+      margin: 0;
+      font-family: Roboto, Arial, sans-serif;
+      background-color: #1c1c1c;
+      overflow: hidden;
+    }
+
+    .center-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      color: white;
+    }
+
+    .pxyinput {
+      width: 300px;
+      height: 40px;
+      padding: 10px;
+      border: none;
+      border-radius: 20px;
+      font-size: 16px;
+      background-color: black;
+      color: white;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    #fullscreen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #1c1c1c;
+      z-index: 999;
+      display: none;
+    }
+
+    .frame {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+
+  <!-- Particle.js -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      particlesJS('particles-js', {
+        'particles': {
+          'number': {
+            'value': 80,
+            'density': {
+              'enable': true,
+              'value_area': 800
+            }
+          },
+          'color': {
+            'value': '#ffffff'
+          },
+          'shape': {
+            'type': 'circle',
+            'stroke': {
+              'width': 0,
+              'color': '#000000'
+            },
+            'polygon': {
+              'nb_sides': 5
+            },
+            'image': {
+              'src': 'img/github.svg',
+              'width': 100,
+              'height': 100
+            }
+          },
+          'opacity': {
+            'value': 0.5,
+            'random': false,
+            'anim': {
+              'enable': false,
+              'speed': 1,
+              'opacity_min': 0.1,
+              'sync': false
+            }
+          },
+          'size': {
+            'value': 3,
+            'random': true,
+            'anim': {
+              'enable': false,
+              'speed': 40,
+              'size_min': 0.1,
+              'sync': false
+            }
+          },
+          'line_linked': {
+            'enable': true,
+            'distance': 150,
+            'color': '#ffffff',
+            'opacity': 0.4,
+            'width': 1
+          },
+          'move': {
+            'enable': true,
+            'speed': 6,
+            'direction': 'none',
+            'random': false,
+            'straight': false,
+            'out_mode': 'out',
+            'bounce': false,
+            'attract': {
+              'enable': false,
+              'rotateX': 600,
+              'rotateY': 1200
+            }
+          }
+        },
+        'interactivity': {
+          'detect_on': 'canvas',
+          'events': {
+            'onhover': {
+              'enable': true,
+              'mode': 'grab'
+            },
+            'onclick': {
+              'enable': true,
+              'mode': 'push'
+            },
+            'resize': true
+          },
+          'modes': {
+            'grab': {
+              'distance': 140,
+              'line_linked': {
+                'opacity': 1
+              }
+            },
+            'bubble': {
+              'distance': 400,
+              'size': 40,
+              'duration': 2,
+              'opacity': 8,
+              'speed': 3
+            },
+            'repulse': {
+              'distance': 200,
+              'duration': 0.4
+            },
+            'push': {
+              'particles_nb': 4
+            },
+            'remove': {
+              'particles_nb': 2
+            }
+          }
+        },
+        'retina_detect': true
+      });
+    });
+  </script>
+
+</head>
+
+<body>
+  <div class="center-container">
+    <h1>Project Opal</h1>
+    <input class="pxyinput" type="text" placeholder="Search..." />
+    <div class="ad">
+      <!-- <script type="text/javascript"
+        src="//www.topcreativeformat.com/fc0ad22bd8c1ea22c8c08df927121e8f/invoke.js"></script> -->
+    </div>
+  </div>
+
+  <div id="fullscreen">
+    <iframe class="frame"></iframe>
+  </div>
+
+  <script src="/uv/uv.bundle.js" charset="UTF-8"></script>
+  <script src="/uv/uv.config.js"></script>
+  <script src="./js/preload.js"></script>
+
+  <script>
+    atOptions = {
+      'key': 'fc0ad22bd8c1ea22c8c08df927121e8f',
+      'format': 'iframe',
+      'height': 60,
+      'width': 468,
+      'params': {}
+    };
+  </script>
+
+  <script src="./js/index.js"></script>
+  <script src="./js/search.js"></script>
+
+  <div id="particles-js"></div>
+
+  <script>
+    function handleKeyPress(event) {
+      if (event.keyCode === 13) { // Enter key
+        document.getElementById('fullscreen').style.display = 'block';
+        document.getElementById('particles-js').style.display = 'none'; // Hide particles
+        document.querySelector('.frame').src = 'about:blank'; // Set iframe source
+      }
+    }
+  </script>
+</body>
+
+</html>
