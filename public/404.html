@@ -1,50 +1,46 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <link
-      rel="shortcut icon"
-      href="./assets/images/icon.png"
-      type="image/png"
-    />
-    <title>Art Class</title>
+<html lang="en">
 
-    <link rel="stylesheet" href="./css/master.css" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <h1>Project Opal | 404</h1>
+  <p>Something went wrong</p>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-    <script src="./js/preload.js"></script>
-  </head>
+  <style>
+    /* Global Styles */
+    body {
+      margin: 0;
+      font-family: Roboto, Arial, sans-serif;
+      background-color: #1c1c1c;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
 
-  <body>
-    <nav>
-      <div class="logo">
-        <img src="./assets/images/icon.png" alt="Logo" draggable="false" />
-        <h1>Art Class</h1>
-      </div>
+    .reload-button {
+      background-color: #000000;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
 
-      <p id="time"></p>
+    .reload-button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
 
-      <div class="navitems">
-        <div class="navitem"><a href="/">Home</a></div>
-        <div class="navitem"><a href="/gs.html">Games</a></div>
-        <div class="navitem"><a href="/apps.html">Apps</a></div>
-        <div class="navitem"><a href="/emulator.html">Emulator</a></div>
-        <div class="navitem"><a href="/search.html">Search</a></div>
-      </div>
-    </nav>
+<body>
+  <button class="reload-button" onclick="location.reload()">Reload</button>
+</body>
 
-    <div class="center-container">
-      <h1>404</h1>
-      <p id="splash">This probably wasn't supposed to happen.</p>
-      <br />
-      <p>
-        In the event that isn't supposed to happen, <br />you can report it in
-        our <a href="https://discord.gg/desmos">Discord server.</a>
-      </p>
-      <br />
-      <button onclick="window.location.href='/index.html'" class="button play">
-        Go home?
-      </button>
-    </div>
-  </body>
-
-  <script src="./js/index.js"></script>
 </html>
